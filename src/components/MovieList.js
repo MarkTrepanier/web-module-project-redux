@@ -2,6 +2,7 @@ import React from 'react';
 
 import MovieListItem from './MovieListItem';
 import MovieFooter from './MovieFooter';
+import { connect } from 'react-redux';
 
 const MovieList = (props)=> {
     const movies = [];
@@ -31,4 +32,10 @@ const MovieList = (props)=> {
     );
 }
 
-export default MovieList;
+const mapStateToProps=(state)=>{
+    return{
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps)(MovieList);
