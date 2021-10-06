@@ -23,8 +23,8 @@ const AddMovieForm = (props) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log(movie)
         props.addMovie(movie)
-        console.log(props.movies);
         push('/movies')
     }
 
